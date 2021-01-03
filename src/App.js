@@ -19,10 +19,11 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="app">
+    <div className="header">Madlibzz Game</div>
       {blanks.map((blank, i) =>
-        <div key={i}>
-          <div>
+        <div className="input-group" key={i}>
+          <div className="wordTypeText">
           {blank}
           </div>
           <span>
@@ -30,6 +31,7 @@ function App() {
           </span>
         </div>
         )}
+        <div className="submitButton">Submit</div>
     </div>
   );
 }
