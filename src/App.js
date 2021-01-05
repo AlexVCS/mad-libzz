@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [ blanks, setBlanks ] = useState([])
   const [ values, setValues ] = useState([])
-  const [ newValues, setNewValues ] = useState([])
+  const [ inputs, setInputs ] = useState([])
 
   useEffect(async () => {
     const res = await fetch('http://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
@@ -14,20 +14,22 @@ function App() {
     setValues(data.value)
   }, []);
 
-  const handleValueChange = (event) => {
-    console.log(setNewValues(event.target.value))
+  const handleValueChange = (event, index) => {
+    const newInputs = [...inputs]
+    newInputs[index] = event.target.value
+    setInputs(newInputs)
   }
 
   return (
     <div className="app">
     <div className="header">Madlibzz Game</div>
-      {blanks.map((blank, i) =>
-        <div className="input-group" key={i}>
+      {blanks.map((blank, index) =>
+        <div className="input-group" key={index}>
           <div className="wordTypeText">
           {blank}
           </div>
           <span>
-          <input onChange={handleValueChange} placeholder={`Enter ${blank}`} type="text"/>
+          <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} type="text"/>
           </span>
         </div>
         )}
@@ -38,5 +40,7 @@ function App() {
 
 export default App;
 
-// store onChange in state
-// third state called values, track everything that's changed in the input and store it in the state
+// add a button for where when you click the button it displays the whole story
+// try to trim off extra spaces
+// hide blanks and inputs
+// maybe a button for a new game which fetches a brand new api
