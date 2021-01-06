@@ -20,6 +20,10 @@ function App() {
     setInputs(newInputs)
   }
 
+  // const renderStory = () => {
+
+  // }
+
   return (
     <div className="app">
     <div className="header">Madlibzz Game</div>
@@ -44,3 +48,6 @@ export default App;
 // try to trim off extra spaces
 // hide blanks and inputs
 // maybe a button for a new game which fetches a brand new api
+{/* <div onClick={}>New Game</div> */}
+// add an alert if the button is clicked but not all inputs have text in them
+// alert('Please fill in all the blanks!')
