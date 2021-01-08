@@ -48,14 +48,14 @@ function App() {
 
 export default App;
 
-// add a button for where when you click the button it displays the whole story
+// add a button when you click the button it displays the whole story
 
-// try to trim off extra spaces
+// try to trim off extra spaces with string.trim
 
 // hide blanks and inputs
 
 // maybe a button for a new game which fetches a brand new api
 /* <div onClick={}>New Game</div> */
 
-// add an alert if the button is clicked but not all inputs have text in them
+// add validation if the button is clicked but not all inputs have text in them
 // alert('Please fill in all the blanks!')
