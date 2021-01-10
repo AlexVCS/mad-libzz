@@ -5,6 +5,8 @@ function App() {
   const [ blanks, setBlanks ] = useState([])
   const [ values, setValues ] = useState([])
   const [ inputs, setInputs ] = useState([])
+  const [ title, setTitle] = useState([])
+  const [ story, setStory ] = useState([])
 
   useEffect(async () => {
     const res = await fetch('http://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
@@ -12,6 +14,7 @@ function App() {
     console.log(data);
     setBlanks(data.blanks)
     setValues(data.value)
+    setTitle(data.title)
   }, []);
 
   const handleValueChange = (event, index) => {
@@ -20,18 +23,19 @@ function App() {
     setInputs(newInputs)
   }
 
-  const renderStory = () => {
-    values.map((value, index) => {
-      <div className="story" key={index}>
-        {value}
-      </div>
-    })
+  const onSubmit = () => {
+    const arr = []
+    for (let i = 0; i < values.length - 1; i++) {
+      arr.push(values[i])
+      arr.push(inputs[i])
+    }
+    setStory(arr)
   }
 
   return (
     <div className="app">
     <div className="header">Madlibzz Game</div>
-      {blanks.map((blank, index) =>
+      {!story.length && blanks.map((blank, index) =>
         <div className="input-group" key={index}>
           <div className="wordTypeText">
           {blank}
@@ -40,8 +44,13 @@ function App() {
           <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} type="text"/>
           </span>
         </div>
-        )}
-        <div onClick={renderStory} className="submitButton">Submit</div>
+      )}
+      {story.length && <> <div>
+      {title}</div>
+      <div>{story}
+      </div>
+      </>}
+      <div onClick={onSubmit} className="submitButton">Submit</div>
     </div>
   );
 }
