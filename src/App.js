@@ -8,13 +8,16 @@ function App() {
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
 
-  useEffect(async () => {
+  useEffect(() => {
+    async function fetchData() {
     const res = await fetch('http://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
     const data = await res.json();
     console.log(data);
     setBlanks(data.blanks)
     setValues(data.value)
     setTitle(data.title)
+    }
+    fetchData();
   }, []);
 
   const handleValueChange = (event, index) => {
@@ -56,12 +59,6 @@ function App() {
 }
 
 export default App;
-
-// add a button when you click the button it displays the whole story
-
-// try to trim off extra spaces with string.trim
-
-// hide blanks and inputs
 
 // maybe a button for a new game which fetches a brand new api
 /* <div onClick={}>New Game</div> */
