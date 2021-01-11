@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-    const res = await fetch('http://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
+    const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
     const data = await res.json();
     console.log(data);
     setBlanks(data.blanks)
@@ -44,7 +44,7 @@ function App() {
           {blank}
           </div>
           <span>
-          <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} type="text"/>
+          <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} className="story-blank" type="text"/>
           </span>
         </div>
       )}
