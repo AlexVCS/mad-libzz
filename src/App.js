@@ -48,7 +48,7 @@ function App() {
           </span>
         </div>
       )}
-      {story.length && <> <div>
+      {!!story.length && <> <div>
       {title}</div>
       <div>{story}
       </div>
