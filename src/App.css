@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box;
 	color: white;
+	font-size: 20px;
 }
 
 body {
@@ -28,12 +29,13 @@ body {
 }
 
 .wordTypeText {
-	width: 150px;
+	width: 175px;
 	padding-bottom: 5px;
 }
 
 .story-blank {
 	color: black;
+	border-radius: 5px;
 }
 
 .story-title {
@@ -50,8 +52,9 @@ body {
 	font-weight: bold;
 	cursor: pointer;
 	width: 141.6px;
-	height: 20px;
+	height: 25px;
 	border-radius: 15px;
 	align-self: center;
+	margin-top: 10px;
 	margin-bottom: 15px;
 }
