@@ -10,29 +10,39 @@ body {
 .app {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	/* justify-content: center; */
 	text-align: center;
 }
 
 .header {
 	padding-top: 15px;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	font-size: 30px;
 	font-weight: bold;
 }
 
 .input-group {
+	display: flex;
+	justify-content: center;
 	padding-bottom: 8px;
-	display: table;
-	position: relative;
 }
 
 .wordTypeText {
+	width: 150px;
 	padding-bottom: 5px;
 }
 
 .story-blank {
 	color: black;
+}
+
+.story-title {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.story-text {
+	padding-bottom: 10px;
 }
 
 .submitButton {

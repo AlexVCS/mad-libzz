@@ -48,12 +48,18 @@ function App() {
           </span>
         </div>
       )}
-      {!!story.length && <> <div>
+      {!!story.length && <> <div className="story-title">
       {title}</div>
-      <div>{story}
+      <div className="story-text">{story}
       </div>
       </>}
-      <div onClick={onSubmit} className="submitButton">Submit</div>
+      {/* { if (!story.length) && <>
+        <div onClick={onSubmit} className="submitButton">Submit</div>
+        else (!!story.length)
+        <div className="newGameButton">New Game</div>
+        </>
+      } */}
+        <div onClick={onSubmit} className="submitButton">Submit</div>
     </div>
   );
 }
