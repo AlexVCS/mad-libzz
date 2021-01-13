@@ -7,6 +7,7 @@ function App() {
   const [ inputs, setInputs ] = useState([])
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
+  // const [ changeButtonText, setChangeButtonText ] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -53,13 +54,9 @@ function App() {
       <div className="story-text">{story}
       </div>
       </>}
-      {/* { if (!story.length) && <>
-        <div onClick={onSubmit} className="submitButton">Submit</div>
-        else (!!story.length)
-        <div className="newGameButton">New Game</div>
-        </>
-      } */}
-        <div onClick={onSubmit} className="submitButton">Submit</div>
+     
+      <div onClick={onSubmit} className="submitAndNewGameButton">Submit</div>
+      {/* <div className="submitAndNewGameButton">New Game</div> */}
     </div>
   );
 }

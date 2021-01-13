@@ -29,7 +29,7 @@ body {
 }
 
 .wordTypeText {
-	width: 175px;
+	width: 200px;
 	padding-bottom: 5px;
 }
 
@@ -41,13 +41,17 @@ body {
 .story-title {
 	font-size: 25px;
 	font-weight: bold;
+	padding-bottom: 10px;
 }
 
 .story-text {
 	padding-bottom: 10px;
+	font-size: 20px;
+	width: 60%;
+	align-self: center;
 }
 
-.submitButton {
+.submitAndNewGameButton {
 	background: red;
 	font-weight: bold;
 	cursor: pointer;
@@ -57,4 +61,10 @@ body {
 	align-self: center;
 	margin-top: 10px;
 	margin-bottom: 15px;
+}
+
+@media (max-width: 500px) {
+	.story-text {
+		width: 80%;
+	}
 }
