@@ -7,10 +7,8 @@ function App() {
   const [ inputs, setInputs ] = useState([])
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
-  // const [ changeButtonText, setChangeButtonText ] = useState(true);
 
-  useEffect(() => {
-    async function fetchData() {
+  async function fetchData() {
     const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
     const data = await res.json();
     console.log(data);
@@ -18,8 +16,10 @@ function App() {
     setValues(data.value)
     setTitle(data.title)
     }
-    fetchData();
-  }, []);
+
+    useEffect(() => {
+      fetchData();
+    }, []);
 
   const handleValueChange = (event, index) => {
     const newInputs = [...inputs]
@@ -55,16 +55,17 @@ function App() {
       </div>
       </>}
      
-      <div onClick={onSubmit} className="submitAndNewGameButton">Submit</div>
-      {/* <div className="submitAndNewGameButton">New Game</div> */}
+      { story.length === 0
+        ? <div onClick={onSubmit} className="submitAndNewGameButton">Submit</div>
+        : <div onClick={fetchData} className="submitAndNewGameButton">New Game</div>
+      }
     </div>
   );
 }
 
 export default App;
 
-// maybe a button for a new game which fetches a brand new api
-/* <div onClick={}>New Game</div> */
+// add functionality to new game button that allows a new game to start
 
 // add validation if the button is clicked but not all inputs have text in them
 // alert('Please fill in all the blanks!')
