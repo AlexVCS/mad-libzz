@@ -47,23 +47,23 @@ function App() {
             <span>
             <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} className="story-blank" type="text"/>
             </span>
-            </div>
-            )}
+          </div>
+        )}
             {!!story.length &&
             <>
-            <div className="story-title">
-            {title}
-            </div>
-            <div className="story-text">{story}
-            </div>
+              <div className="story-title">
+              {title}
+              </div>
+              <div className="story-text">{story}
+              </div>
             </>}
      
             { story.length === 0
               ? <div onClick={onSubmit} className="submitAndNewGameButton">Submit</div>
               : <div onClick={fetchData} className="submitAndNewGameButton">New Game</div>
-              }
-              </div>
-              );
+            }
+    </div>
+        );
 }
 
 export default App;
