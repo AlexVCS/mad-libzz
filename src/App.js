@@ -11,15 +11,15 @@ function App() {
   async function fetchData() {
     const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
     const data = await res.json();
-    setBlanks(data.blanks)
-    setValues(data.value)
-    setTitle(data.title)
-    setStory([])
+      setBlanks(data.blanks)
+      setValues(data.value)
+      setTitle(data.title)
+      setStory([])
+      setInputs([])
     }
-
-    useEffect(() => {
-      fetchData();
-    }, []);
+      useEffect(() => {
+        fetchData();
+      }, []);
 
   const handleValueChange = (event, index) => {
     const newInputs = [...inputs]
@@ -33,7 +33,7 @@ function App() {
       arr.push(values[i])
       arr.push(inputs[i])
     }
-    setStory(arr)
+      setStory(arr)
   }
 
   return (
