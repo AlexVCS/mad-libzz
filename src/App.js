@@ -7,6 +7,7 @@ function App() {
   const [ inputs, setInputs ] = useState([])
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
+  // const [ errors, setErrors ] = useState([])
 
   async function fetchData() {
     const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
@@ -17,9 +18,9 @@ function App() {
       setStory([])
       setInputs([])
     }
-      useEffect(() => {
-        fetchData();
-      }, []);
+        useEffect(() => {
+          fetchData();
+        }, []);
 
   const handleValueChange = (event, index) => {
     const newInputs = [...inputs]
@@ -51,11 +52,8 @@ function App() {
         )}
             {!!story.length &&
             <>
-              <div className="story-title">
-              {title}
-              </div>
-              <div className="story-text">{story}
-              </div>
+              <div className="story-title">{title}</div>
+              <div className="story-text">{story}</div>
             </>}
      
             { story.length === 0
@@ -63,7 +61,7 @@ function App() {
               : <div onClick={fetchData} className="submitAndNewGameButton">New Game</div>
             }
     </div>
-        );
+  );
 }
 
 export default App;
