@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="header">Madlibzz Game</div>
+      <div className="header">Mad Libzz Game</div>
         {!story.length && blanks.map((blank, index) =>
           <div className="input-group" key={index}>
             <div className="wordTypeText">
@@ -47,6 +47,10 @@ function App() {
             </div>
             <span>
             <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} className="story-blank" type="text"/>
+            {/* { setInputs.length < 1
+              ? <div>Type in a word{error++}</div>
+              : null
+            } */}
             </span>
           </div>
         )}
