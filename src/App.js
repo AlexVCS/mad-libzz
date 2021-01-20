@@ -7,7 +7,8 @@ function App() {
   const [ inputs, setInputs ] = useState([])
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
-  // const [ errors, setErrors ] = useState([])
+  const [ valid, setValid ] = useState(false)
+  // let blank = document.getElementsByClassName('story-blank')
 
   async function fetchData() {
     const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
@@ -26,6 +27,19 @@ function App() {
     const newInputs = [...inputs]
     newInputs[index] = event.target.value
     setInputs(newInputs)
+  }
+
+  const checkValidity = (value, rules) => {
+    let isValid = false
+
+    if(!rules) {
+      return true
+    }
+
+    if(rules.required) {
+      isValid = value.trim() !== ''
+    }
+    return isValid
   }
 
   const onSubmit = () => {
@@ -47,18 +61,16 @@ function App() {
             </div>
             <span>
             <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} className="story-blank" type="text"/>
-            {/* { setInputs.length < 1
-              ? <div>Type in a word{error++}</div>
-              : null
-            } */}
+            
             </span>
           </div>
         )}
             {!!story.length &&
-            <>
-              <div className="story-title">{title}</div>
-              <div className="story-text">{story}</div>
-            </>}
+              <>
+                <div className="story-title">{title}</div>
+                <div className="story-text">{story}</div>
+              </>
+            }
      
             { story.length === 0
               ? <div onClick={onSubmit} className="submitAndNewGameButton">Submit</div>
