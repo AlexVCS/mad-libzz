@@ -7,8 +7,7 @@ function App() {
   const [ inputs, setInputs ] = useState([])
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
-  const [ valid, setValid ] = useState(false)
-  // let blank = document.getElementsByClassName('story-blank')
+  // const [ valid, setValid ] = useState(true)
 
   async function fetchData() {
     const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
@@ -27,19 +26,6 @@ function App() {
     const newInputs = [...inputs]
     newInputs[index] = event.target.value
     setInputs(newInputs)
-  }
-
-  const checkValidity = (value, rules) => {
-    let isValid = false
-
-    if(!rules) {
-      return true
-    }
-
-    if(rules.required) {
-      isValid = value.trim() !== ''
-    }
-    return isValid
   }
 
   const onSubmit = () => {
@@ -61,7 +47,9 @@ function App() {
             </div>
             <span>
             <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} className="story-blank" type="text"/>
-            
+            {/* {
+
+            } */}
             </span>
           </div>
         )}
