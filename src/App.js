@@ -7,7 +7,7 @@ function App() {
   const [ inputs, setInputs ] = useState([])
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
-  // const [ valid, setValid ] = useState(true)
+  // const [ error, setError ] = useState([])
 
   async function fetchData() {
     const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
@@ -36,6 +36,8 @@ function App() {
     }
       setStory(arr)
   }
+
+  
 
   return (
     <div className="app">
@@ -69,6 +71,3 @@ function App() {
 }
 
 export default App;
-
-// add validation if the button is clicked but not all inputs have text in them
-// alert('Please fill in all the blanks!')
