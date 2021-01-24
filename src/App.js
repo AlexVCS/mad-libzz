@@ -36,6 +36,8 @@ function App() {
       arr.push(inputs[i])
     }
       setStory(arr)
+      const instructions = document.getElementsByClassName('instruction-text')
+      instructions.innerText = ''
 
       // const error = blanks.map((blank, i) => values[i])
       // setErrors(error)
@@ -45,7 +47,12 @@ function App() {
 
   return (
     <div className="app">
-      <div className="header">Mad Libzz Game</div>
+      <div className="header">Mad Libzz Game
+        { story.length === 0
+          ? <div className="instruction-text">Fill in each blank with the right kind of word & click submit 😃</div>
+          : ''
+        }
+      </div>
         {!story.length && blanks.map((blank, index) =>
           <div className="input-group" key={index}>
             <div className="wordTypeText">

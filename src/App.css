@@ -28,6 +28,11 @@ body {
 	);
 }
 
+.instruction-text {
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
 .input-group {
 	display: flex;
 	justify-content: center;
