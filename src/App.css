@@ -94,4 +94,9 @@ body {
 	.story-text {
 		width: 80%;
 	}
+
+	.submitAndNewGameButton {
+		width: 350px;
+		font-size: 25px;
+	}
 }

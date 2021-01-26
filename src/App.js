@@ -7,8 +7,8 @@ function App() {
   const [ inputs, setInputs ] = useState([])
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
-  // const [ errors, setErrors ] = useState([])
-  // const [ showErrors, setShowErrors ] = useState(true)
+  const [ errors, setErrors ] = useState([])
+  const [ showErrors, setShowErrors ] = useState(true)
 
   async function fetchData() {
     const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
@@ -39,8 +39,8 @@ function App() {
       const instructions = document.getElementsByClassName('instruction-text')
       instructions.innerText = ''
 
-      // const error = blanks.map((blank, i) => values[i])
-      // setErrors(error)
+      const error = inputs.map((input, i) => values[i])
+      setErrors(error)
   }
 
   
@@ -48,9 +48,8 @@ function App() {
   return (
     <div className="app">
       <div className="header">Mad Libzz Game
-        { story.length === 0
-          ? <div className="instruction-text">Fill in each blank with the right kind of word & click submit 😃</div>
-          : ''
+        { story.length === 0 &&
+           <div className="instruction-text">Fill in each blank with the right kind of word & click submit 😃</div>
         }
       </div>
         {!story.length && blanks.map((blank, index) =>
@@ -60,7 +59,7 @@ function App() {
             </div>
             <span>
             <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} className="story-blank" type="text"/>
-            {/* {setShowErrors && values[index] && <div className="error-text" >Please fill this out</div>} */}
+            {setShowErrors && values[index] && <div className="error-text">Please fill this out</div>}
             </span>
           </div>
         )}
