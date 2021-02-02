@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -31,14 +31,14 @@ function App() {
 
   const onSubmit = () => {
     const arr = []
+    
+
     for (let i = 0; i < values.length - 1; i++) {
       arr.push(values[i])
       arr.push(inputs[i])
     }
       setStory(arr)
   }
-
-  
 
   return (
     <div className="app">
@@ -53,8 +53,8 @@ function App() {
               {blank}
             </div>
             <span>
-            <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} className="story-blank" type="text"/>
-            {/* {setShowErrors && values[index] && <div className="error-text">Please fill this out</div>} */}
+            {/* {setShowErrors && <div className="error-text">Please fill this out</div>} */}
+            <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} className="story-blank" />
             </span>
           </div>
         )}
