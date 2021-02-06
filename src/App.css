@@ -91,6 +91,11 @@ body {
 		font-size: 20px;
 	}
 
+	.instruction-text {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
 	.story-text {
 		width: 80%;
 	}

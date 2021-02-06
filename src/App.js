@@ -30,6 +30,7 @@ function App() {
   }
 
   const onSubmit = () => {
+    const errorsArr = [...errors];
     // if (inputs[index] === 'undefined') {
     //   setErrors('Please fill this in')
     // }
