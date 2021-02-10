@@ -30,8 +30,7 @@ function App() {
   }
 
   const onSubmit = () => {
-    const errorsArr = [...errors];
-    // if (inputs[index] === 'undefined') {
+    // if (inputs === 'undefined') {
     //   setErrors('Please fill this in')
     // }
     
@@ -56,8 +55,9 @@ function App() {
               {blank}
             </div>
             <span>
-            {errors && <div className="error-text">{errors}</div>}
-            <input onChange={(event) => {handleValueChange(event, index)}} placeholder={`Enter ${blank}`} className="story-blank" />
+              {!showErrors && <div className="error-text">{errors}</div>}
+              <input onChange={(event) => {handleValueChange(event, index)}}
+              placeholder={`Enter ${blank}`} className="story-blank" />
             </span>
           </div>
         )}
