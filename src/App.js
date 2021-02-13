@@ -30,9 +30,9 @@ function App() {
   }
 
   const onSubmit = () => {
-    // if (inputs === 'undefined') {
-    //   setErrors('Please fill this in')
-    // }
+    if (typeof inputs === 'undefined') {
+      setErrors('Please fill this in')
+    }
     
     const arr = []
     for (let i = 0; i < values.length - 1; i++) {
@@ -69,7 +69,7 @@ function App() {
             }
      
             { story.length === 0
-              ? <div onClick={onSubmit} className="submitAndNewGameButton">Submit</div>
+              ? <div onClick={onSubmit} className="submitAndNewGameButton">Submit!</div>
               : <div onClick={fetchData} className="submitAndNewGameButton">New Game</div>
             }
     </div>
