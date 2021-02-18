@@ -8,7 +8,6 @@ function App() {
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
   const [ errors, setErrors ] = useState([])
-  const [ showErrors, setShowErrors ] = useState(false)
 
   async function fetchData() {
     const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
@@ -30,16 +29,28 @@ function App() {
   }
 
   const onSubmit = () => {
-    if (typeof inputs === 'undefined') {
-      setErrors('Please fill this in')
-    }
+    // if ( inputs === 'undefined') {
+    //   setErrors('Please fill this in')
+    // }
+    let hasErrors = false;
     
+    const newErrors = [];
+    blanks.forEach((blank, index) => {
+      if (inputs[index] === undefined) {
+        newErrors[index] = 'Please fill this in';
+        hasErrors = true;
+      }
+    });
+    setErrors(newErrors);
+
     const arr = []
-    for (let i = 0; i < values.length - 1; i++) {
-      arr.push(values[i])
-      arr.push(inputs[i])
-    }
+    if (!hasErrors) {
+      for (let i = 0; i < values.length - 1; i++) {
+        arr.push(values[i])
+        arr.push(inputs[i])
+      }
       setStory(arr)
+    }
   }
 
   return (
@@ -55,9 +66,12 @@ function App() {
               {blank}
             </div>
             <span>
-              {!showErrors && <div className="error-text">{errors}</div>}
-              <input onChange={(event) => {handleValueChange(event, index)}}
-              placeholder={`Enter ${blank}`} className="story-blank" />
+              {errors[index] && <div className="error-text">{errors[index]}</div>}
+              <input 
+                onChange={(event) => {handleValueChange(event, index)}}
+                placeholder={`Enter ${blank}`}
+                className="story-blank"
+              />
             </span>
           </div>
         )}
