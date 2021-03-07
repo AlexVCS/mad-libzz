@@ -29,11 +29,7 @@ function App() {
   }
 
   const onSubmit = () => {
-    // if ( inputs === 'undefined') {
-    //   setErrors('Please fill this in')
-    // }
     let hasErrors = false;
-    
     const newErrors = [];
     blanks.forEach((blank, index) => {
       if (inputs[index] === undefined) {
