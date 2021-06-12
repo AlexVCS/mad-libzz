@@ -2,10 +2,11 @@
 	box-sizing: border-box;
 	color: white;
 	font-size: 25px;
+	font-weight: bold;
 }
 
 body {
-	background: #100c08;
+	background: #ef4339;
 }
 
 .app {
@@ -18,14 +19,7 @@ body {
 	padding-top: 15px;
 	margin-bottom: 20px;
 	font-size: 35px;
-	font-weight: bold;
-	background: -webkit-linear-gradient(
-		-45deg,
-		rgba(255, 48, 25, 1) 11%,
-		rgba(207, 4, 4, 1) 28%,
-		rgba(207, 4, 4, 1) 32%,
-		rgba(207, 4, 4, 1) 62%
-	);
+	background: #ef4339;
 }
 
 .instruction-text {
@@ -43,6 +37,7 @@ body {
 	width: 200px;
 	padding-bottom: 5px;
 	padding-right: 30px;
+	/* color: #100c08; */
 }
 
 .story-blank {
@@ -69,13 +64,7 @@ body {
 }
 
 .submitAndNewGameButton {
-	background: -webkit-linear-gradient(
-		-45deg,
-		rgba(255, 48, 25, 1) 11%,
-		rgba(207, 4, 4, 1) 28%,
-		rgba(207, 4, 4, 1) 32%,
-		rgba(207, 4, 4, 1) 62%
-	);
+	background: #393e46;
 	font-weight: bold;
 	cursor: pointer;
 	width: 450px;
@@ -86,9 +75,9 @@ body {
 	margin-bottom: 15px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 485px) {
 	* {
-		font-size: 20px;
+		font-size: 17px;
 	}
 
 	.instruction-text {
@@ -101,7 +90,7 @@ body {
 	}
 
 	.submitAndNewGameButton {
-		width: 350px;
+		width: 325px;
 		font-size: 25px;
 	}
 }
