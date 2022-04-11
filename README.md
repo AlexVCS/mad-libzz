@@ -1,1 +1,65 @@
-Make your own Mad Libzz! :)
+# Mad Libzz - word game
+
+Fill in the blanks with random words and enjoy the story you create!
+
+## Table of Contents
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Technologies](#technologies)
+* [Attributions](#attributions)
+
+<p align="center">
+    <img alt="Mad Libs concept art with React logos added to the eyes" src="images/madlibz.png">
+</p>
+
+### Screenshots
+
+<p align="center">
+    <img alt="Mad Libzz game screenshot with blanks almost all filled in" src="images/madlibzscreenshot.png">
+</p>
+
+<p align="center">
+    <img alt="Mad Libzz game screenshot showing a completed story" src="images/madlibzscreenshot2.png">
+</p>
+
+### Setup
+
+Click the green code button:
+
+<img alt="Screenshot showing the green code button on GitHub" src="images/greenCodeButton.png">
+
+From there, click the button to the right of the URL under HTTPS. This will copy the URL of the repository.
+
+Then open your terminal or command line. If you haven't used the command line before [learn how to here](https://www.theodinproject.com/lessons/foundations-command-line-basics).
+
+If you've got a folder where you keep projects, change directories into that folder. After that type this command:
+
+```git clone https://github.com/AlexVCS/mad-libzz.git```
+
+This clones the repository to your local machine. It has a root directory called `mad-libzz` to store all the files.
+
+Change directories into that folder:
+
+```cd mad-libzz```
+
+After that you can open the project in your text editor of choice. I use Visual Studio Code and launch it from the command line. [Learn how here](https://code.visualstudio.com/docs/setup/mac).
+
+Once you have the project open, you need to install the dependencies. Run this in your commmand line from the root (mad-libzz folder) of the project:
+
+```npm install```
+
+After that finishes, run this to start the project:
+
+```npm start```
+
+### Technologies
+
+* React
+* CSS
+* JavaScript
+
+### Attributions
+
+*Photo at the top is from [Fred Seibert on Flickr](https://flickr.com/photos/84568447@N00/), with a small edit*
+
+*[Madlibs API](https://madlibz.herokuapp.com/api) is used to fetch the random story and blanks*
