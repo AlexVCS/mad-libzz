@@ -1,4 +1,4 @@
-# Mad Libzz - word game
+# [Mad Libzz](https://madlibzz.netlify.app/) - word game
 
 Fill in the blanks with random words and enjoy the story you create!
 
