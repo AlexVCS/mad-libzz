@@ -62,7 +62,7 @@ After that you can open the project in your text editor of choice. I use Visual 
 
 ### Technologies
 
-* React
+* [React](https://reactjs.org/docs/getting-started.html)
 * CSS
 * JavaScript
 
