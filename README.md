@@ -30,6 +30,8 @@ This is a screenshot of a finished story. After you fill in all the blanks you g
 
 ### Setup
 
+Node.js and NPM are required to run this project. If you don't have them installed please follow [these instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) first.
+
 1. Click the green code button:
 
 <img alt="Screenshot showing the green code button on GitHub" src="images/greenCodeButton.png">
