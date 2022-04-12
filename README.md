@@ -1,6 +1,8 @@
-# [Mad Libzz](https://madlibzz.netlify.app/) - word game
+# Mad Libzz - word game
 
 Fill in the blanks with random words and enjoy the story you create!
+
+[Play Mad Libzz](https://madlibzz.netlify.app/) 😮
 
 ## Table of Contents
 * [Screenshots](#screenshots)
@@ -28,31 +30,31 @@ This is a screenshot of a finished story. After you fill in all the blanks you g
 
 ### Setup
 
-Click the green code button:
+1. Click the green code button:
 
 <img alt="Screenshot showing the green code button on GitHub" src="images/greenCodeButton.png">
 
-From there, click the button to the right of the URL under HTTPS. This will copy the URL of the repository.
+2. From there, click the button to the right of the URL under HTTPS. This will copy the URL of the repository.
 
-Then open your terminal or command line. If you haven't used the command line before [learn how to here](https://www.theodinproject.com/lessons/foundations-command-line-basics).
+3. Then open your terminal or command line. If you haven't used the command line before [learn how to here](https://www.theodinproject.com/lessons/foundations-command-line-basics).
 
-If you've got a folder where you keep projects, change directories into that folder. After that type this command:
+4. If you've got a folder where you keep projects, change directories into that folder. After that type this command:
 
 ```git clone https://github.com/AlexVCS/mad-libzz.git```
 
 This clones the repository to your local machine. It has a root directory called `mad-libzz` to store all the files.
 
-Change directories into that folder:
+5. Change directories into that folder:
 
 ```cd mad-libzz```
 
 After that you can open the project in your text editor of choice. I use Visual Studio Code and launch it from the command line. [Learn how here](https://code.visualstudio.com/docs/setup/mac).
 
-Once you have the project open, you need to install the dependencies. Run this in your command line from the root (mad-libzz folder) of the project:
+6. Once you have the project open, you need to install the dependencies. Run this in your command line from the root (mad-libzz folder) of the project:
 
 ```npm install```
 
-After that finishes, run this to start the project:
+7. After that finishes, run this to start the project:
 
 ```npm start```
 
