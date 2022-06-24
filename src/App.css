@@ -1,25 +1,36 @@
+:root {
+	background: #131313;
+	color: #FCFCFC;
+}
+
+[data-theme="light"] {
+	background: #FCFCFC;
+	color: #131313;
+}
+
 * {
 	box-sizing: border-box;
-	color: white;
 	font-size: 25px;
 	font-weight: bold;
 }
 
-body {
-	background: #ef4339;
-}
-
-.app {
+.App {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+	transition: all .5s;
 }
 
 .header {
 	padding-top: 15px;
 	margin-bottom: 20px;
 	font-size: 35px;
-	background: #ef4339;
+}
+
+.theme-toggle-button {
+	border-radius: 5px;
+	width: 300px;
+	align-self: center;
 }
 
 .instruction-text {
@@ -41,8 +52,12 @@ body {
 }
 
 .story-blank {
-	color: #080808;
 	border-radius: 5px;
+	font-family: 'Poppins', sans-serif;
+}
+
+::placeholder {
+	color: #131313;
 }
 
 .error-text {
@@ -64,7 +79,8 @@ body {
 }
 
 .submitAndNewGameButton {
-	background: #393e46;
+	background: #44474b;
+	color: #FCFCFC;
 	font-weight: bold;
 	cursor: pointer;
 	width: 450px;
