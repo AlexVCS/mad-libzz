@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import useLocalStorage from 'use-local-storage';
 
 function App() {
   const [ blanks, setBlanks ] = useState([])
@@ -8,6 +9,10 @@ function App() {
   const [ title, setTitle] = useState([])
   const [ story, setStory ] = useState([])
   const [ errors, setErrors ] = useState([])
+  const [ themeToggleValue, setThemeToggleValue ] = useState('Switch to Light Mode')
+
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light')
 
   async function fetchData() {
     const res = await fetch('https://madlibz.herokuapp.com/api/random?minlength=5&maxlength=15%27');
@@ -49,12 +54,25 @@ function App() {
     }
   }
 
+  const switchTheme = () => {
+    if(theme === 'dark') {
+      setTheme('light')
+      setThemeToggleValue('Switch to Dark Mode')
+    } else {
+      setTheme('dark')
+      setThemeToggleValue('Switch to Light Mode')
+    }
+  }
+
   return (
-    <div className="app">
+    <div data-testid="app-1" id="app-container" className="App" data-theme={theme}>
       <div className="header">Mad Libzz Game
-        { story.length === 0 &&
-           <div className="instruction-text">Fill in each blank with the right kind of word & click submit 😃</div>
-        }
+        <div className="button-container">
+          <button className="theme-toggle-button" onClick={switchTheme}>{themeToggleValue}</button>
+        </div>
+          { story.length === 0 &&
+            <div className="instruction-text">Fill in each blank with the right kind of word & click submit 😃</div>
+          }
       </div>
         {!story.length && blanks.map((blank, index) =>
           <div className="input-group" key={index}>
