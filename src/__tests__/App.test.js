@@ -1,8 +1,14 @@
-import { render, screen, cleanup } from '@testing-library/react';
+import { unmountComponentAtNode } from 'react-dom';
 import App from '../App';
 
-test('should render app component', () => {
-    render(<App/>);
-    const appElement = screen.getByTestId('app-1');
-    expect(appElement).toBeInTheDocument();
+let container = null;
+beforeEach(() => {
+    container = document.createElement("div");
+    document.body.appendChild(container);
+});
+
+afterEach(() => {
+    unmountComponentAtNode(container);
+    container.remove();
+    container = null;
 })
